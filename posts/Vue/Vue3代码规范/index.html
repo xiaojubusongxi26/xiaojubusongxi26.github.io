@@ -1,0 +1,522 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Vue3代码规范 | 小橘不颂兮🍊</title><meta name="keywords" content="Vue"><meta name="author" content="王谢棠"><meta name="copyright" content="王谢棠"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Vue3代码规范"><meta name="application-name" content="Vue3代码规范"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="Vue3代码规范"><meta property="og:url" content="http://example.com/posts/Vue/Vue3%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/index.html"><meta property="og:site_name" content="小橘不颂兮🍊"><meta property="og:description" content="此规范来源于SmartAdmin 一、Vue3 基础1.1、项目命名全部采用小写方式， 以中划线分隔。 12正例：&amp;#96;smart-admin&amp;#96;反例：&amp;#96;mall_management-system &amp;#x2F; mallManagementSystem&amp;#96;  1.2、目录、文件命名目录、文件名 均以 小写方式， 以"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://w.wallhaven.cc/full/l8/wallhaven-l8r8dr.jpg"><meta property="article:author" content="王谢棠"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://w.wallhaven.cc/full/l8/wallhaven-l8r8dr.jpg"><meta name="description" content="此规范来源于SmartAdmin 一、Vue3 基础1.1、项目命名全部采用小写方式， 以中划线分隔。 12正例：&amp;#96;smart-admin&amp;#96;反例：&amp;#96;mall_management-system &amp;#x2F; mallManagementSystem&amp;#96;  1.2、目录、文件命名目录、文件名 均以 小写方式， 以"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/posts/Vue/Vue3%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 王谢棠","link":"链接: ","source":"来源: 小橘不颂兮🍊","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '小橘不颂兮🍊',
+  title: 'Vue3代码规范',
+  postAI: '',
+  pageFillDescription: '一、Vue3 基础, 1.1、项目命名, 1.2、目录、文件命名, 1.3、单引号、双引号、分号, 二、Vue3 组合式 API规范, 2.1、 使用setup语法糖, 2.2、组合式Composition API 规范, 2.3 模板引用变量Ref, 2.4 变量和方法的注释, 三、Vue3 组件规范, 3.1、 组件文件名, 3.2、 父子组件文件名, 3.3、 组件属性, 3.4、 模板中表达式, 3.5、 标签顺序, 四、Vue Router 规范, 4.1、 页面传参, 4.2、 path 和 name 命名规范, 五、 Vue 项目规范, 5.1、 目录规范, 5.2、 api 目录, 5.3、 assets 目录, 5.4、 components 目录, 5.5、 constants 目录, 5.6、 router 与 store 目录, 5.7、 views 目录此规范来源于一基础项目命名全部采用小写方式以中划线分隔正例反例目录文件命名目录文件名均以小写方式以中划线分隔正例反例单引号双引号分号中的中标签属性使用双引号所有中的字符串使用单引号所有中的代码行换行要用分号二组合式规范使用语法糖组件必须使用语法糖大法方便简洁全局都要使用语法糖组合式规范组件内必须使用模块化思想把代码进行拆分参照官方文档对于的理解更灵活的代码组织组合式即解决的是让相互关联的代码在一起以更方便的组织代码故我们的代码格式如下即将相关的变量和代码写到一起并使用行注释进行分块各种需要导入定义组件属性和对外暴露的方法以及抛出的事件表格查询的变量和方法批量操作的变量和方法表单的变量和方法举例分成了两个模块即模块显示隐藏操作的变量和方法模块表单的变量和方法以下是正确的例子组件显示隐藏操作的变量和方法是否展示抽屉显示隐藏表单的变量和方法查询表单默认值分类分类名字分类类型父级是否禁用查询表单表单校验规则请输入分类名称修改添加成功参数验证错误请仔细填写表单数据错误的例子定义所有变量组件是否展示抽屉查询表单默认值分类分类名字分类类型父级是否禁用查询表单表单校验规则请输入分类名称定义所有方法显示隐藏修改添加成功参数验证错误请仔细填写表单数据官方希望是模块化的组织代码你看记得官方这个图吗第一种写法所有变量写到了一起就像的区域所有方法写到一起就像中的区域这样下来其实和没什么区别也就语法稍微变了一下那么就与的初衷违背了下面引用官方的话处理相同逻辑关注点的代码被强制拆分在了不同的选项中位于文件的不同部分在一个几百行的大组件中要读懂代码中的一个逻辑关注点需要在文件中反复上下滚动这并不理想另外如果我们想要将一个逻辑关注点抽取重构到一个可复用的工具函数中需要从文件的多个不同部分找到所需的正确片段中的写法才真正做到了组合式的意图每一块业务的变量与方法写到一起比如上面代码中的显示与隐藏的变量和方法放到了一起表单的变量和方法放到了一起下面引用官方的话现在与同一个逻辑关注点相关的代码被归为了一组我们无需再为了一个逻辑关注点在不同的选项块间来回滚动切换此外我们现在可以很轻松地将这一组代码移动到一个外部文件中不再需要为了抽象而重新组织代码大大降低了重构成本这在长期维护的大型项目中非常关键模板引用变量对于中的模板引用即是作为一个特殊的我们要求使用方法参数为空进行声明变量变量必须以为结尾中的也必须以为结尾比如上面的例子我们声明如下变量和方法的注释在使用进行代码编写时我们有效的组织了代码但是由于变量和方法会写到一起这时候注释就变得很有必要要求变量必须都加上注释方法必须加上注释比如查询公告默认值分类标题作者来源文号创建人删除标识创建开始时间创建截止时间发布开始时间发布截止时间查询公告请求表单三组件规范组件文件名组件文件名应该为格式正例反例父子组件文件名和父组件紧密耦合的子组件应该以父组件名作为前缀命名正例完整单词反例使用了缩写组件属性组件属性较多应该主动换行正例反例模板中表达式组件模板应该只包含简单的表达式复杂的表达式则应该重构为计算属性或方法复杂表达式会让你的模板变得不那么声明式我们应该尽量描述应该出现的是什么而非如何计算那个值而且计算属性和方法使得代码可以重用正例复杂表达式已经移入一个计算属性反例标签顺序单文件组件应该总是让标签顺序保持为正例反例四规范页面传参页面跳转例如页面跳转到页面需要将页面的数据传递到页面推荐使用路由参数进行传参即正例和命名规范命名规范尽量与文件的目录结构保持一致因为目录文件名都是这样很方便找到对应的文件必须以开头即使是里的也要以开头如下示例经常有这样的场景某个页面有问题要立刻找到这个文件如果不用以开头为和组成的可能经常需要在文件里搜索多次才能找到而如果以开头则能立刻搜索到对应的组件命名规范采用命名规范且和组件名保持一致因为要保持特性按照的进行缓存所以两者必须高度保持一致动态加载动态加载查询执行查看执行结果五项目规范目录规范源码目录所有接口静态资源等公用组件配置信息常量信息项目所有全局常量等自定义指令国际化外部引用的插件存放及修改文件模拟接口临时存放插件全局使用路由统一管理统一管理自定义样式主题工具类视图目录模块名列表页面新建页面更新页面模块样式模块通用组件文件夹模块目录文件要以为结尾比如方便查找文件必须导出对象必须以为结尾如中以一个对象将方法包裹中的注释必须和后端文档保持一致同时保留后端作者正例前端查询部门列表卓大查询部门树形列表卓大添加部门卓大更新部门信息卓大目录为静态资源里面存放等静态资源静态资源命名格式为目录此目录应按照组件进行目录划分目录命名为一个组件必须一个单独的目录目的一个组件一个目录是为了将来组件的扩展因为这是整个项目公用的组件组件入口必须为原因也是因为这是整个项目公用的组件举例如下目录此目录存放项目所有常量和枚举如果常量在中使用请使用插件也可以使用我们写的第三方库插件但是还不支持等待更新吧具体要求常量文件要以为结尾比如变量要大写下划线比如如果是枚举变量必须以为结尾如目录结构例子正常禁用已删除登录微信登录钉钉登录用户名密码登录与目录这两个目录一定要将业务进行拆分不能放到一个文件里尽量按照中的结构保持一致按照业务进行拆分不同的文件目录目录要求按照模块划分其中具体文件名要求如下如果是列表页面要以为结尾如如果是表单页面要以为结尾如如果是弹窗要以为结尾如表单弹窗详情如果是抽屉页面要同上以为结尾视图目录模块名列表页面新建页面更新页面模块样式模块通用组件文件夹弹出框组件模块行为日志模块代码生成器模块',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-12-17 01:48:06',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/2B9A1EE0-8EBD-4AF1-89EE-CE3C5F1E9657_1_201_a.jpeg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://xiaojubusongxi26.github.io/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">小橘不颂兮🍊</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/CSS/" style="font-size: 1.05rem;">CSS<sup>3</sup></a><a href="/tags/Koa/" style="font-size: 1.05rem;">Koa<sup>1</sup></a><a href="/tags/React/" style="font-size: 1.05rem;">React<sup>1</sup></a><a href="/tags/Vue/" style="font-size: 1.05rem;">Vue<sup>3</sup></a><a href="/tags/javascript/" style="font-size: 1.05rem;">javascript<sup>4</sup></a><a href="/tags/uniapp/" style="font-size: 1.05rem;">uniapp<sup>2</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">14</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" itemprop="url">前端开发</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Vue/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Vue</span></a></span></div></div><h1 class="post-title" itemprop="name headline">Vue3代码规范</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2023-12-16T09:56:00.000Z" title="发表于 2023-12-16 17:56:00">2023-12-16</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2023-12-16T17:48:06.000Z" title="更新于 2023-12-17 01:48:06">2023-12-17</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为成都"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>成都</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://w.wallhaven.cc/full/l8/wallhaven-l8r8dr.jpg"></div></header><main id="blog-container"><div class="layout hide-aside" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/posts/Vue/Vue3%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"><header><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" itemprop="url">前端开发</a><a href="/tags/Vue/" tabindex="-1" itemprop="url">Vue</a><h1 id="CrawlerTitle" itemprop="name headline">Vue3代码规范</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">王谢棠</span><time itemprop="dateCreated datePublished" datetime="2023-12-16T09:56:00.000Z" title="发表于 2023-12-16 17:56:00">2023-12-16</time><time itemprop="dateCreated datePublished" datetime="2023-12-16T17:48:06.000Z" title="更新于 2023-12-17 01:48:06">2023-12-17</time></header><p>此规范来源于<a target="_blank" rel="noopener" href="https://smartadmin.vip/">SmartAdmin</a></p>
+<h2 id="一、Vue3-基础"><a href="#一、Vue3-基础" class="headerlink" title="一、Vue3 基础"></a><strong>一、Vue3 基础</strong></h2><h3 id="1-1、项目命名"><a href="#1-1、项目命名" class="headerlink" title="1.1、项目命名"></a>1.1、项目命名</h3><p>全部采用小写方式， 以中划线分隔。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">正例：`smart-admin`</span><br><span class="line">反例：`mall_management-system / mallManagementSystem`</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2、目录、文件命名"><a href="#1-2、目录、文件命名" class="headerlink" title="1.2、目录、文件命名"></a>1.2、目录、文件命名</h3><p>目录、文件名 均以 小写方式， 以中划线分隔。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">正例：`/head-search/`、`/shopping-car/`、`smart-logo.png`、`role-form.vue`</span><br><span class="line">反例：`/headSearch/`、 `smartLogo.png`、 `RoleForm.vue`</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3、单引号、双引号、分号"><a href="#1-3、单引号、双引号、分号" class="headerlink" title="1.3、单引号、双引号、分号"></a>1.3、单引号、双引号、分号</h3><ul>
+<li>html中、vue的template 中 标签属性 使用 <strong>双引号</strong></li>
+<li>所有js中的 字符串 使用 <strong>单引号</strong></li>
+<li>所有js中的代码行换行要用 <strong>分号</strong></li>
+</ul>
+<h2 id="二、Vue3-组合式-API规范"><a href="#二、Vue3-组合式-API规范" class="headerlink" title="二、Vue3 组合式 API规范"></a><strong>二、Vue3 组合式 API规范</strong></h2><h3 id="2-1、-使用setup语法糖"><a href="#2-1、-使用setup语法糖" class="headerlink" title="2.1、 使用setup语法糖"></a>2.1、 使用setup语法糖</h3><ul>
+<li>组件必须使用 setup 语法糖</li>
+<li>setup 大法方便简洁</li>
+<li>全局都要使用setup语法糖</li>
+</ul>
+<h3 id="2-2、组合式Composition-API-规范"><a href="#2-2、组合式Composition-API-规范" class="headerlink" title="2.2、组合式Composition API 规范"></a>2.2、组合式Composition API 规范</h3><p>组件内必须使用模块化思想，把代码 进行 拆分； 参照 vue3官方文档对于 Composition Api的理解： <a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/extras/composition-api-faq.html#better-logic-reuse">更灵活的代码组织</a> ，组合式Api，即 Composition API 解决的是让 相互关联的代码在一起，以更方便的组织代码，故我们的代码格式如下：</p>
+<p><strong>即：将相关的 变量和代码 写到一起，并使用 行注释 进行分块</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">// 各种需要导入</span><br><span class="line">import xxxxx;</span><br><span class="line">import xxxxx;</span><br><span class="line">import xxxxx;</span><br><span class="line"></span><br><span class="line">// -------- 定义组件属性和对外暴露的方法、以及抛出的事件 --------</span><br><span class="line"></span><br><span class="line">// -------- 表格查询的 变量和方法 --------</span><br><span class="line"></span><br><span class="line">// -------- 批量操作的 变量和方法 --------</span><br><span class="line"></span><br><span class="line">// -------- 表单的 变量和方法 --------</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>举例，分成了两个模块，即：</p>
+<ul>
+<li>模块1：显示 、隐藏操作的 变量和方法</li>
+<li>模块2：表单的 变量和方法</li>
+</ul>
+<p><strong>【以下是正确的例子】</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">  import &#123; ref, reactive &#125; from &#x27;vue&#x27;;</span><br><span class="line">  import &#123; message &#125; from &#x27;ant-design-vue&#x27;;</span><br><span class="line">  import &#123; SmartLoading &#125; from &#x27;/@/components/framework/smart-loading&#x27;;</span><br><span class="line">  import _ from &#x27;lodash&#x27;;</span><br><span class="line">  import &#123; categoryApi &#125; from &#x27;/@/api/business/category/category-api&#x27;;</span><br><span class="line">  import &#123; smartSentry &#125; from &#x27;/@/lib/smart-sentry&#x27;;</span><br><span class="line"></span><br><span class="line">  // emit</span><br><span class="line">  const emit = defineEmits(&#x27;reloadList&#x27;);</span><br><span class="line"></span><br><span class="line">  //  组件</span><br><span class="line">  const formRef = ref();</span><br><span class="line"></span><br><span class="line">  // ------------------------------ 显示 、隐藏操作的 变量和方法------------------------------</span><br><span class="line"></span><br><span class="line">  // 是否展示抽屉</span><br><span class="line">  const visible = ref(false);</span><br><span class="line">  // 显示</span><br><span class="line">  function showModal(categoryType, parentId, rowData) &#123;</span><br><span class="line">    Object.assign(form, formDefault);</span><br><span class="line">    form.categoryType = categoryType;</span><br><span class="line">    form.parentId = parentId;</span><br><span class="line">    if (rowData &amp;&amp; !_.isEmpty(rowData)) &#123;</span><br><span class="line">      Object.assign(form, rowData);</span><br><span class="line">    &#125;</span><br><span class="line">    visible.value = true;</span><br><span class="line">  &#125;</span><br><span class="line">  // 隐藏</span><br><span class="line">  function onClose() &#123;</span><br><span class="line">    Object.assign(form, formDefault);</span><br><span class="line">    visible.value = false;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // ------------------------------ 表单的  变量和方法 ------------------------------</span><br><span class="line">  // 查询表单默认值</span><br><span class="line">  const formDefault = &#123;</span><br><span class="line">    categoryId: undefined, //分类id</span><br><span class="line">    categoryName: &#x27;&#x27;, //分类名字</span><br><span class="line">    categoryType: 1, // 分类类型</span><br><span class="line">    parentId: undefined, // 父级id</span><br><span class="line">    disabledFlag: false, //是否禁用</span><br><span class="line">  &#125;;</span><br><span class="line">  // 查询表单</span><br><span class="line">  let form = reactive(&#123; ...formDefault &#125;);</span><br><span class="line">  // 表单校验规则</span><br><span class="line">  const rules = &#123;</span><br><span class="line">    categoryName: [&#123; required: true, message: &#x27;请输入分类名称&#x27; &#125;],</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  function onSubmit() &#123;</span><br><span class="line">    formRef.value</span><br><span class="line">      .validate()</span><br><span class="line">      .then(async () =&gt; &#123;</span><br><span class="line">        SmartLoading.show();</span><br><span class="line">        try &#123;</span><br><span class="line">          if (form.categoryId) &#123;</span><br><span class="line">            await categoryApi.updateCategory(form);</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">            await categoryApi.addCategory(form);</span><br><span class="line">          &#125;</span><br><span class="line">          message.success(`$&#123;form.categoryId ? &#x27;修改&#x27; : &#x27;添加&#x27;&#125;成功`);</span><br><span class="line">          emit(&#x27;reloadList&#x27;, form.parentId);</span><br><span class="line">          onClose();</span><br><span class="line">        &#125; catch (error) &#123;</span><br><span class="line">          smartSentry.captureError(error);</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">          SmartLoading.hide();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch((error) =&gt; &#123;</span><br><span class="line">        console.log(&#x27;error&#x27;, error);</span><br><span class="line">        message.error(&#x27;参数验证错误，请仔细填写表单数据!&#x27;);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  defineExpose(&#123;</span><br><span class="line">    showModal,</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>【错误的例子】</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">  import &#123; ref, reactive &#125; from &#x27;vue&#x27;;</span><br><span class="line">  import &#123; message &#125; from &#x27;ant-design-vue&#x27;;</span><br><span class="line">  import &#123; SmartLoading &#125; from &#x27;/@/components/framework/smart-loading&#x27;;</span><br><span class="line">  import _ from &#x27;lodash&#x27;;</span><br><span class="line">  import &#123; categoryApi &#125; from &#x27;/@/api/business/category/category-api&#x27;;</span><br><span class="line">  import &#123; smartSentry &#125; from &#x27;/@/lib/smart-sentry&#x27;;</span><br><span class="line"></span><br><span class="line">  // -----------------  定义 所有变量  -----------------</span><br><span class="line"></span><br><span class="line">  // emit</span><br><span class="line">  const emit = defineEmits(&#x27;reloadList&#x27;);</span><br><span class="line">  //  组件</span><br><span class="line">  const formRef = ref();</span><br><span class="line">  // 是否展示抽屉</span><br><span class="line">  const visible = ref(false);</span><br><span class="line">  // 查询表单默认值</span><br><span class="line">  const formDefault = &#123;</span><br><span class="line">    categoryId: undefined, //分类id</span><br><span class="line">    categoryName: &#x27;&#x27;, //分类名字</span><br><span class="line">    categoryType: 1, // 分类类型</span><br><span class="line">    parentId: undefined, // 父级id</span><br><span class="line">    disabledFlag: false, //是否禁用</span><br><span class="line">  &#125;;</span><br><span class="line">  // 查询表单</span><br><span class="line">  let form = reactive(&#123; ...formDefault &#125;);</span><br><span class="line">  // 表单校验规则</span><br><span class="line">  const rules = &#123;</span><br><span class="line">    categoryName: [&#123; required: true, message: &#x27;请输入分类名称&#x27; &#125;],</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  // -----------------  定义 所有方法 -----------------</span><br><span class="line">  // 显示</span><br><span class="line">  function showModal(categoryType, parentId, rowData) &#123;</span><br><span class="line">    Object.assign(form, formDefault);</span><br><span class="line">    form.categoryType = categoryType;</span><br><span class="line">    form.parentId = parentId;</span><br><span class="line">    if (rowData &amp;&amp; !_.isEmpty(rowData)) &#123;</span><br><span class="line">      Object.assign(form, rowData);</span><br><span class="line">    &#125;</span><br><span class="line">    visible.value = true;</span><br><span class="line">  &#125;</span><br><span class="line">  // 隐藏</span><br><span class="line">  function onClose() &#123;</span><br><span class="line">    Object.assign(form, formDefault);</span><br><span class="line">    visible.value = false;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  function onSubmit() &#123;</span><br><span class="line">    formRef.value</span><br><span class="line">      .validate()</span><br><span class="line">      .then(async () =&gt; &#123;</span><br><span class="line">        SmartLoading.show();</span><br><span class="line">        try &#123;</span><br><span class="line">          if (form.categoryId) &#123;</span><br><span class="line">            await categoryApi.updateCategory(form);</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">            await categoryApi.addCategory(form);</span><br><span class="line">          &#125;</span><br><span class="line">          message.success(`$&#123;form.categoryId ? &#x27;修改&#x27; : &#x27;添加&#x27;&#125;成功`);</span><br><span class="line">          emit(&#x27;reloadList&#x27;, form.parentId);</span><br><span class="line">          onClose();</span><br><span class="line">        &#125; catch (error) &#123;</span><br><span class="line">          smartSentry.captureError(error);</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">          SmartLoading.hide();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">      .catch((error) =&gt; &#123;</span><br><span class="line">        console.log(&#x27;error&#x27;, error);</span><br><span class="line">        message.error(&#x27;参数验证错误，请仔细填写表单数据!&#x27;);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  defineExpose(&#123;</span><br><span class="line">    showModal,</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>vue 官方希望是 模块化的组织代码，你看记得官方这个图吗?</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.nlark.com/yuque/0/2023/png/35774964/1689927800995-5c86e6d3-4655-472c-a13f-e4106e6a2f3b.png" alt="img"></p>
+<p>第一种写法，所有变量写到了一起，就像vue2的 data区域，所有方法写到一起，就像vue2中的 methods区域，这样下来其实和vue2没什么区别，也就语法稍微变了一下，那么就与<strong>composition api</strong>的初衷违背了，下面引用官方的话</p>
+<p>处理相同逻辑关注点的代码被强制拆分在了不同的选项中，位于文件的不同部分。在一个几百行的大组件中，要读懂代码中的一个逻辑关注点，需要在文件中反复上下滚动，这并不理想。另外，如果我们想要将一个逻辑关注点抽取重构到一个可复用的工具函数中，需要从文件的多个不同部分找到所需的正确片段。</p>
+<p>SmartAdmin中的写法才真正做到了vue3组合式composition api的意图，每一块业务的变量与方法写到一起，比如上面代码中的显示与隐藏的变量和方法放到了一起，表单的变量和方法放到了一起，下面引用官方的话</p>
+<p>现在与同一个逻辑关注点相关的代码被归为了一组：我们无需再为了一个逻辑关注点在不同的选项块间来回滚动切换。此外，我们现在可以很轻松地将这一组代码移动到一个外部文件中，不再需要为了抽象而重新组织代码，大大降低了重构成本，这在长期维护的大型项目中非常关键。</p>
+<h3 id="2-3-模板引用变量Ref"><a href="#2-3-模板引用变量Ref" class="headerlink" title="2.3 模板引用变量Ref"></a>2.3 模板引用变量Ref</h3><p>对于vue3中的模板引用ref，即 ref 是作为一个特殊的 attribute</p>
+<input ref="inputRef">
+
+<p>我们要求：</p>
+<ul>
+<li>使用 ref方法，参数为空 进行声明变量</li>
+<li>变量必须以 Ref为结尾</li>
+<li>template中的ref 也必须以 Ref 为结尾</li>
+</ul>
+<p>比如上面的例子，我们声明如下</p>
+<p>const inputRef &#x3D; ref();</p>
+<h3 id="2-4-变量和方法的注释"><a href="#2-4-变量和方法的注释" class="headerlink" title="2.4 变量和方法的注释"></a>2.4 变量和方法的注释</h3><p>在使用Composition Api进行代码编写时，我们有效的组织了代码，但是由于Composition Api变量和方法会写到一起，这时候注释就变得很有必要要求：</p>
+<ul>
+<li>变量必须都加上注释</li>
+<li>方法必须加上注释比如</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 查询 公告 默认值</span><br><span class="line">  const queryFormState = &#123;</span><br><span class="line">    noticeTypeId: undefined, //分类</span><br><span class="line">    keywords: &#x27;&#x27;, //标题、作者、来源</span><br><span class="line">    documentNumber: &#x27;&#x27;, //文号</span><br><span class="line">    createUserId: undefined, //创建人</span><br><span class="line">    deletedFlag: undefined, //删除标识</span><br><span class="line">    createTimeBegin: null, //创建-开始时间</span><br><span class="line">    createTimeEnd: null, //创建-截止时间</span><br><span class="line">    publishTimeBegin: null, //发布-开始时间</span><br><span class="line">    publishTimeEnd: null, //发布-截止时间</span><br><span class="line">    pageNum: 1,</span><br><span class="line">    pageSize: PAGE_SIZE,</span><br><span class="line">  &#125;;</span><br><span class="line">  // 查询 公告 请求表单</span><br><span class="line">  const queryForm = reactive(&#123; ...queryFormState &#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、Vue3-组件规范"><a href="#三、Vue3-组件规范" class="headerlink" title="三、Vue3 组件规范"></a><strong>三、Vue3 组件规范</strong></h2><h3 id="3-1、-组件文件名"><a href="#3-1、-组件文件名" class="headerlink" title="3.1、 组件文件名"></a>3.1、 组件文件名</h3><p>组件文件名应该为 pascal-case 格式</p>
+<p>正例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">components</span><br><span class="line">|- my-component.vue</span><br></pre></td></tr></table></figure>
+
+<p>反例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">components</span><br><span class="line">|- myComponent.vue</span><br><span class="line">|- MyComponent.vue</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2、-父子组件文件名"><a href="#3-2、-父子组件文件名" class="headerlink" title="3.2、 父子组件文件名"></a>3.2、 父子组件文件名</h3><p>和父组件紧密耦合的子组件应该以父组件名作为前缀命名正例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">components</span><br><span class="line">|- todo-list.vue</span><br><span class="line">|- todo-list-item.vue</span><br><span class="line">|- todo-list-item-button.vue</span><br><span class="line">|- user-profile-options.vue （完整单词）</span><br></pre></td></tr></table></figure>
+
+<p>反例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">components</span><br><span class="line">|- TodoList.vue</span><br><span class="line">|- TodoItem.vue</span><br><span class="line">|- TodoButton.vue</span><br><span class="line">|- UProfOpts.vue （使用了缩写）</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3、-组件属性"><a href="#3-3、-组件属性" class="headerlink" title="3.3、 组件属性"></a>3.3、 组件属性</h3><p>组件属性较多，应该主动换行。</p>
+<p>正例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;MyComponent foo=&quot;a&quot; bar=&quot;b&quot; baz=&quot;c&quot;</span><br><span class="line">    foo=&quot;a&quot; bar=&quot;b&quot; baz=&quot;c&quot;</span><br><span class="line">    foo=&quot;a&quot; bar=&quot;b&quot; baz=&quot;c&quot;</span><br><span class="line"> /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>反例：</p>
+<MyComponent foo="a" bar="b" baz="c" foo="a" bar="b" baz="c" foo="a" bar="b" baz="c" foo="a" bar="b" baz="c"/>
+
+<h3 id="3-4、-模板中表达式"><a href="#3-4、-模板中表达式" class="headerlink" title="3.4、 模板中表达式"></a>3.4、 模板中表达式</h3><p>组件模板应该只包含简单的表达式，复杂的表达式则应该重构为计算属性或方法。复杂表达式会让你的模板变得不那么声明式。我们应该尽量描述应该出现的是什么，而非如何计算那个值。而且计算属性和方法使得代码可以重用。</p>
+<p>正例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123; normalizedFullName &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">// 复杂表达式已经移入一个计算属性</span><br><span class="line">computed: &#123;</span><br><span class="line">  normalizedFullName: function () &#123;</span><br><span class="line">    return this.fullName.split(&#x27; &#x27;).map(function (word) &#123;</span><br><span class="line">      return word[0].toUpperCase() + word.slice(1)</span><br><span class="line">    &#125;).join(&#x27; &#x27;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>反例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line">       &#123;&#123;</span><br><span class="line">          fullName.split(&#x27; &#x27;).map(function (word) &#123;</span><br><span class="line">             return word[0].toUpperCase() + word.slice(1)</span><br><span class="line">           &#125;).join(&#x27; &#x27;)</span><br><span class="line">        &#125;&#125;</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5、-标签顺序"><a href="#3-5、-标签顺序" class="headerlink" title="3.5、 标签顺序"></a>3.5、 标签顺序</h3><p>单文件组件应该总是让标签顺序保持为 <template> 、<script>、 <style></p>
+<p>正例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;...&lt;/template&gt;</span><br><span class="line">&lt;script&gt;...&lt;/script&gt;</span><br><span class="line">&lt;style&gt;...&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>反例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;...&lt;/template&gt;</span><br><span class="line">&lt;style&gt;...&lt;/style&gt;</span><br><span class="line">&lt;script&gt;...&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、Vue-Router-规范"><a href="#四、Vue-Router-规范" class="headerlink" title="四、Vue Router 规范"></a><strong>四、Vue Router 规范</strong></h2><h3 id="4-1、-页面传参"><a href="#4-1、-页面传参" class="headerlink" title="4.1、 页面传参"></a>4.1、 页面传参</h3><p>页面跳转，例如 A 页面跳转到 B 页面，需要将 A 页面的数据传递到 B 页面，推荐使用 路由参数进行传参，即 {query:param}</p>
+<p>正例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let id = &#x27; 123&#x27;;</span><br><span class="line">this.$router.push(&#123; name: &#x27;userCenter&#x27;, query: &#123; id: id &#125; &#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2、-path-和-name-命名规范"><a href="#4-2、-path-和-name-命名规范" class="headerlink" title="4.2、 path 和 name 命名规范"></a>4.2、 path 和 name 命名规范</h3><ul>
+<li>pathkebab-case命名规范（尽量与vue文件的目录结构保持一致，因为目录、文件名都是kebab-case，这样很方便找到对应的文件）</li>
+<li>path 必须以 / 开头，即使是children里的path也要以 / 开头。如下示例</li>
+<li>经常有这样的场景：某个页面有问题，要立刻找到这个vue文件，如果不用以/开头，path为parent和children组成的，可能经常需要在router文件里搜索多次才能找到，而如果以/开头，则能立刻搜索到对应的组件</li>
+<li>name 命名规范采用KebabCase命名规范且和component组件名保持一致！（因为要保持keep-alive特性，keep-alive按照component的name进行缓存，所以两者必须高度保持一致）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">// 动态加载</span><br><span class="line">export const reload = [</span><br><span class="line">  &#123;</span><br><span class="line">    path: &#x27;/reload&#x27;,</span><br><span class="line">    name: &#x27;reload&#x27;,</span><br><span class="line">    component: Main,</span><br><span class="line">    meta: &#123;</span><br><span class="line">      title: &#x27;动态加载&#x27;,</span><br><span class="line">      icon: &#x27;icon iconfont&#x27;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    children: [</span><br><span class="line">      &#123;</span><br><span class="line">        path: &#x27;/reload/smart-reload-list&#x27;,</span><br><span class="line">        name: &#x27;SmartReloadList&#x27;,</span><br><span class="line">        meta: &#123;</span><br><span class="line">          title: &#x27;SmartReload&#x27;,</span><br><span class="line">          childrenPoints: [</span><br><span class="line">            &#123;</span><br><span class="line">              title: &#x27;查询&#x27;,</span><br><span class="line">              name: &#x27;smart-reload-search&#x27;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">              title: &#x27;执行reload&#x27;,</span><br><span class="line">              name: &#x27;smart-reload-update&#x27;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">              title: &#x27;查看执行结果&#x27;,</span><br><span class="line">              name: &#x27;smart-reload-result&#x27;</span><br><span class="line">            &#125;</span><br><span class="line">          ]</span><br><span class="line">        &#125;,</span><br><span class="line">        component: () =&gt;</span><br><span class="line">          import(&#x27;@/views/reload/smart-reload/smart-reload-list.vue&#x27;)</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、-Vue-项目规范"><a href="#五、-Vue-项目规范" class="headerlink" title="五、 Vue 项目规范"></a><strong>五、 Vue 项目规范</strong></h2><h3 id="5-1、-目录规范"><a href="#5-1、-目录规范" class="headerlink" title="5.1、 目录规范"></a>5.1、 目录规范</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">src                               源码目录</span><br><span class="line">|-- api                              所有api接口</span><br><span class="line">|-- assets                           静态资源，images, icons, styles等</span><br><span class="line">|-- components                       公用组件</span><br><span class="line">|-- config                           配置信息</span><br><span class="line">|-- constants                        常量信息，项目所有Enum, 全局常量等</span><br><span class="line">|-- directives                       自定义指令</span><br><span class="line">|-- i18n                             国际化</span><br><span class="line">|-- lib                              外部引用的插件存放及修改文件</span><br><span class="line">|-- mock                             模拟接口，临时存放</span><br><span class="line">|-- plugins                          插件，全局使用</span><br><span class="line">|-- router                           路由，统一管理</span><br><span class="line">|-- store                            vuex, 统一管理</span><br><span class="line">|-- theme                            自定义样式主题</span><br><span class="line">|-- utils                            工具类</span><br><span class="line">|-- views                            视图目录</span><br><span class="line">|   |-- role                             role模块名</span><br><span class="line">|   |-- |-- role-list.vue                    role列表页面</span><br><span class="line">|   |-- |-- role-add.vue                     role新建页面</span><br><span class="line">|   |-- |-- role-update.vue                  role更新页面</span><br><span class="line">|   |-- |-- index.less                      role模块样式</span><br><span class="line">|   |-- |-- components                      role模块通用组件文件夹</span><br><span class="line">|   |-- employee                         employee模块</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2、-api-目录"><a href="#5-2、-api-目录" class="headerlink" title="5.2、 api 目录"></a>5.2、 api 目录</h3><ul>
+<li>api文件要以api为结尾，比如 employee-api.js、login-api.js，方便查找</li>
+<li>api文件必须导出对象必须以Api为结尾，如：employeeApi、noticeApi</li>
+<li>api中以一个对象将方法包裹</li>
+<li>api中的注释，必须和后端 swagger 文档保持一致，同时保留后端作者</li>
+</ul>
+<p>正例：</p>
+<p>前端： department-api.js</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">import &#123; getRequest, postRequest &#125; from &#x27;/@/lib/axios&#x27;;</span><br><span class="line"></span><br><span class="line">export const departmentApi = &#123;</span><br><span class="line">  /**</span><br><span class="line">   * @description: 查询部门列表 @author 卓大</span><br><span class="line">   * @param &#123;*&#125;</span><br><span class="line">   * @return &#123;*&#125;</span><br><span class="line">   */</span><br><span class="line">  queryAllDepartment: () =&gt; &#123;</span><br><span class="line">    return getRequest(&#x27;/department/listAll&#x27;);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * @description: 查询部门树形列表 @author 卓大</span><br><span class="line">   * @param &#123;*&#125;</span><br><span class="line">   * @return &#123;*&#125;</span><br><span class="line">   */</span><br><span class="line">   queryDepartmentTree: () =&gt; &#123;</span><br><span class="line">    return getRequest(&#x27;/department/treeList&#x27;);</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * @description: 添加部门 @author 卓大</span><br><span class="line">   * @param &#123;*&#125;</span><br><span class="line">   * @return &#123;*&#125;</span><br><span class="line">   */</span><br><span class="line">  addDepartment: (param) =&gt; &#123;</span><br><span class="line">    return postRequest(&#x27;/department/add&#x27;, param);</span><br><span class="line">  &#125;,</span><br><span class="line">  /**</span><br><span class="line">   * @description: 更新部门信息 @author 卓大</span><br><span class="line">   * @param &#123;*&#125;</span><br><span class="line">   * @return &#123;*&#125;</span><br><span class="line">   */</span><br><span class="line">  updateDepartment: (param) =&gt; &#123;</span><br><span class="line">    return postRequest(&#x27;/department/update&#x27;, param);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3、-assets-目录"><a href="#5-3、-assets-目录" class="headerlink" title="5.3、 assets 目录"></a>5.3、 assets 目录</h3><p>assets 为静态资源，里面存放 images, styles, icons 等静态资源，静态资源命名格式为 kebab-case</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">|assets</span><br><span class="line">|-- icons</span><br><span class="line">|-- images</span><br><span class="line">|   |-- background-color.png</span><br><span class="line">|   |-- upload-header.png</span><br><span class="line">|-- styles</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-4、-components-目录"><a href="#5-4、-components-目录" class="headerlink" title="5.4、 components 目录"></a>5.4、 components 目录</h3><p>此目录应按照组件进行目录划分，目录命名为 kebab-case，一个组件必须一个单独的目录 ；目的：</p>
+<ul>
+<li>一个组件一个目录是为了将来组件的扩展，因为这是整个项目公用的组件</li>
+<li>组件入口必须为 index.vue，原因也是因为这是整个项目公用的组件</li>
+</ul>
+<p>举例如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">|components</span><br><span class="line">|-- error-log</span><br><span class="line">|   |-- index.vue</span><br><span class="line">|   |-- index.less</span><br><span class="line">|-- markdown-editor</span><br><span class="line">|   |-- index.vue</span><br><span class="line">|   |-- index.js</span><br><span class="line">|-- kebab-case</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-5、-constants-目录"><a href="#5-5、-constants-目录" class="headerlink" title="5.5、 constants 目录"></a>5.5、 constants 目录</h3><p>此目录存放项目所有常量和枚举，如果常量在 vue 中使用，请使用 src/plugin/smart-enums-plugin.js插件，也可以使用我们写的第三方库： <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/vue-enum">vue-enum 插件</a>，但是还不支持vue3，等待更新吧</p>
+<p>具体要求：</p>
+<ul>
+<li>常量文件要以 const 为结尾，比如login-const.js、file-const.js</li>
+<li>变量要：大写下划线，比如 LOGIN_RESULT_ENUM、LOGIN_SUCCESS、LOGIN_FAIL</li>
+<li>如果是 枚举，变量必须以 ENUM为结尾，如：LOGIN_RESULT_ENUM、CODE_FRONT_COMPONENT_ENUM</li>
+</ul>
+<p>目录结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|constants</span><br><span class="line">|-- index-const.js</span><br><span class="line">|-- role-const.js</span><br><span class="line">|-- employee-const.js</span><br></pre></td></tr></table></figure>
+
+<p>例子： employee-const.js</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">export const EMPLOYEE_STATUS = &#123;</span><br><span class="line">  NORMAL: &#123;</span><br><span class="line">    value: 1,</span><br><span class="line">    desc: &#x27;正常&#x27;</span><br><span class="line">  &#125;,</span><br><span class="line">  DISABLED: &#123;</span><br><span class="line">    value: 1,</span><br><span class="line">    desc: &#x27;禁用&#x27;</span><br><span class="line">  &#125;,</span><br><span class="line">  DELETED: &#123;</span><br><span class="line">    value: 2,</span><br><span class="line">    desc: &#x27;已删除&#x27;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">export const EMPLOYEE_ACCOUNT_TYPE = &#123;</span><br><span class="line">  QQ: &#123;</span><br><span class="line">    value: 1,</span><br><span class="line">    desc: &#x27;QQ登录&#x27;</span><br><span class="line">  &#125;,</span><br><span class="line">  WECHAT: &#123;</span><br><span class="line">    value: 2,</span><br><span class="line">    desc: &#x27;微信登录&#x27;</span><br><span class="line">  &#125;,</span><br><span class="line">  DINGDING: &#123;</span><br><span class="line">    value: 3,</span><br><span class="line">    desc: &#x27;钉钉登录&#x27;</span><br><span class="line">  &#125;,</span><br><span class="line">  USERNAME: &#123;</span><br><span class="line">    value: 4,</span><br><span class="line">    desc: &#x27;用户名密码登录&#x27;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  EMPLOYEE_STATUS,</span><br><span class="line">  EMPLOYEE_ACCOUNT_TYPE</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-6、-router-与-store-目录"><a href="#5-6、-router-与-store-目录" class="headerlink" title="5.6、 router 与 store 目录"></a>5.6、 router 与 store 目录</h3><p>这两个目录一定要将业务进行拆分，不能放到一个 js 文件里。</p>
+<p>router 尽量按照 views 中的结构保持一致</p>
+<p>store 按照业务进行拆分不同的 js 文件</p>
+<h3 id="5-7、-views-目录"><a href="#5-7、-views-目录" class="headerlink" title="5.7、 views 目录"></a>5.7、 views 目录</h3><p>目录要求，按照模块划分，其中具体文件名要求如下：</p>
+<ul>
+<li>如果是列表页面，要以list为结尾，如role-list.vue、cache-list.vue</li>
+<li>如果是 表单页面，要以 form为结尾，如 role-form.vue、notice-add-form.vue</li>
+<li>如果是 modal弹窗，要以 modal为结尾，如 表单弹窗 role-form-modal.vue，详情 role-detail-modal.vue</li>
+<li>如果是 drawer 抽屉页面，要同上以 Drawer为结尾</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">|-- views                                        视图目录</span><br><span class="line">|   |-- role                                     role模块名</span><br><span class="line">|   |   |-- role-list.vue                        role列表页面</span><br><span class="line">|   |   |-- role-add-form.vue                    role新建页面</span><br><span class="line">|   |   |-- role-update-form-modal.vue           role更新页面</span><br><span class="line">|   |   |-- index.less                           role模块样式</span><br><span class="line">|   |   |-- components                           role模块通用组件文件夹</span><br><span class="line">|   |   |   |-- role-title-modal.vue             role弹出框组件</span><br><span class="line">|   |-- employee                                 employee模块</span><br><span class="line">|   |-- behavior-log                             行为日志log模块</span><br><span class="line">|   |-- code-generator                           代码生成器模块</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/2B9A1EE0-8EBD-4AF1-89EE-CE3C5F1E9657_1_201_a.jpeg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/2B9A1EE0-8EBD-4AF1-89EE-CE3C5F1E9657_1_201_a.jpeg" title="头像" alt="头像"></a><div class="post-copyright__author_name">王谢棠</div><div class="post-copyright__author_desc">嘿，好久不见</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/posts/Vue/Vue3%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/posts/Vue/Vue3%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/')">Vue3代码规范</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/posts/Vue/Vue3%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=Vue3代码规范&amp;url=http://example.com/posts/Vue/Vue3%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/&amp;pic=https://w.wallhaven.cc/full/l8/wallhaven-l8r8dr.jpg" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">小橘不颂兮🍊</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/Vue/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>Vue<span class="tagsPageCount">3</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://w.wallhaven.cc/full/jx/wallhaven-jxl3qp.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/uniapp/uniapp%E4%B8%ADhttp%E3%80%81https%E6%B7%B7%E5%90%88%E9%97%AE%E9%A2%98/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/wallhaven-qzgymr.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">uniapp中http、https混合问题</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/posts/Vue/%E7%BA%AF%E5%89%8D%E7%AB%AF%E5%AF%BC%E5%87%BAexcel%E6%96%87%E4%BB%B6/" title="纯前端导出excel文件"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/wallhaven-858pv2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-12-17</div><div class="title">纯前端导出excel文件</div></div></a></div><div><a href="/posts/Vue/Vue3%E5%B7%A5%E5%85%B7/" title="Vue3 实用工具"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/wallhaven-rrjwem.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-12-17</div><div class="title">Vue3 实用工具</div></div></a></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 王谢棠</div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">1</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://xiaojubusongxi26.github.io/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/CSS/" style="font-size: 0.88rem;">CSS<sup>3</sup></a><a href="/tags/Koa/" style="font-size: 0.88rem;">Koa<sup>1</sup></a><a href="/tags/React/" style="font-size: 0.88rem;">React<sup>1</sup></a><a href="/tags/Vue/" style="font-size: 0.88rem;">Vue<sup>3</sup></a><a href="/tags/javascript/" style="font-size: 0.88rem;">javascript<sup>4</sup></a><a href="/tags/uniapp/" style="font-size: 0.88rem;">uniapp<sup>2</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("12/16/2023 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2023 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 王谢棠 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
