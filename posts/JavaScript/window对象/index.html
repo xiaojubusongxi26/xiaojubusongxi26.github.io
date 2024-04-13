@@ -1,0 +1,533 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>window 对象 | 小橘不颂兮🍊</title><meta name="keywords" content="javascript"><meta name="author" content="王谢棠"><meta name="copyright" content="王谢棠"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="window 对象"><meta name="application-name" content="window 对象"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="window 对象"><meta property="og:url" content="http://example.com/posts/JavaScript/window%E5%AF%B9%E8%B1%A1/index.html"><meta property="og:site_name" content="小橘不颂兮🍊"><meta property="og:description" content="概述window 对象指当前浏览器的窗口，也是当前页面的顶层对象。  如果一个变量未声明，那么默认就是顶层对象的属性。   Window 对象的属性name特性：  该属性是一个字符串，如果给它赋值其他类型值也会被转成字符串。不同浏览器这个属性能存储的值大小不一，可以高达几 MB 只要浏览器标签页没"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/wallhaven-qz8z3d.jpg"><meta property="article:author" content="王谢棠"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/wallhaven-qz8z3d.jpg"><meta name="description" content="概述window 对象指当前浏览器的窗口，也是当前页面的顶层对象。  如果一个变量未声明，那么默认就是顶层对象的属性。   Window 对象的属性name特性：  该属性是一个字符串，如果给它赋值其他类型值也会被转成字符串。不同浏览器这个属性能存储的值大小不一，可以高达几 MB 只要浏览器标签页没"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/posts/JavaScript/window%E5%AF%B9%E8%B1%A1/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 王谢棠","link":"链接: ","source":"来源: 小橘不颂兮🍊","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '小橘不颂兮🍊',
+  title: 'window 对象',
+  postAI: '',
+  pageFillDescription: '概述, Window 对象的属性, name, closed, opener, self、window, frames, length, frameElement, top、parent, devicePixelRatio, 位置大小属性, 全局对象属性, window 对象方法, alert(), prompt(), confirm(), open(), close(), moveTo(), moveBy(), resizeTo(), resizeBy(), scrollTo(), scrollBy(), print(), focus(), blur(), getSelection(), getComputedStyle(), matchMedia(), requestAnimationFrame(), requestIdleCallback(), 写在最后概述对象指当前浏览器的窗口也是当前页面的顶层对象如果一个变量未声明那么默认就是顶层对象的属性对象的属性特性该属性是一个字符串如果给它赋值其他类型值也会被转成字符串不同浏览器这个属性能存储的值大小不一可以高达几只要浏览器标签页没有关闭无论是重定向至其他网站还是刷新网页该属性都存在用处可以记录来源网站信息跨页跳转携带信息引用张鑫旭大佬对该属性的评价没什么卵用知道他没用就是很有用的知识返回一个布尔值表示窗口是否关闭感觉有点鸡肋可以用于编写脚本表示打开当前窗口的父窗口如果当前窗口没有父窗口即直接在地址栏输入打开则返回用处通过属性可以获得父窗口的全局属性和方法但只限于两个窗口同源的情况且其中一个窗口由另一个打开元素添加属性可以防止新打开的窗口获取父窗口减轻被恶意网站修改父窗口的风险已读属性都指向窗口本身返回一个类似数组的对象成员为页面内所有框架窗口包括元素和元素表示页面中第一个框架窗口返回当前网页包含的框架总数如果当前网页不包含和元素那么就返回用于当前窗口嵌在另一个网页的情况嵌入或元素返回当前窗口所在的那个元素节点如果当前窗口是顶层窗口或者所嵌入的那个网页不是同源的该属性返回返回窗口层级最顶层窗口的引用指向父窗口如果当前窗口没有父窗口指向自身返回当前窗口的直接父对象而返回最顶层的窗口对象当你在处理父窗口的子框架而你想获取顶层框架时这个属性相当有用返回一个数值表示一个像素的大小与一个物理像素的大小之间的比率也就是说它表示一个像素由多少个物理像素组成它可以用于判断用户的显示环境如果这个比率较大就表示用户正在使用高清屏幕因此可以显示较大像素的图片寸值为位置大小属性单独有文章写过不在赘述全局对象属性指向对象注意这个属性有同源限制只有来自同源的脚本才能读取这个属性指向对象用于获取当前窗口的信息它等同于属性指向对象用于获取环境信息指向对象表示浏览器的浏览历史指向本地储存的数据指向本地储存的数据指向对象用于操作控制台指向对象表示屏幕信息都可以省略前面的对象方法弹出对话框无法使用样式可以使用换行弹出的对话框提示文字的下方还有一个输入框要求用户输入信息并有确定和取消两个按钮它往往用来获取用户输入的数据如果点击确定函数的返回值就是输入值如果点击取消或者返回返回一个布尔值如果用户点击确定返回如果用户点击取消则返回用于新建另一个浏览器窗口类似于浏览器菜单的新建窗口选项它会返回新窗口的引用如果无法新建窗口则返回参数字符串表示新窗口的网址如果省略默认网址就是字符串表示新窗口的名字如果该名字的窗口已经存在则占用该窗口不再新建窗口如果省略就默认使用表示新建一个没有名字的窗口另外还有几个预设值表示当前窗口表示顶层窗口表示上一层窗口字符串内容为逗号分隔的键值对详见下文表示新窗口的参数比如有没有提示栏工具条等等如果省略则默认打开一个完整的新窗口如果新建的是一个已经存在的窗口则该参数不起作用浏览器沿用以前窗口的参数示例上面代码表示打开的新窗口高度和宽度都为像素没有地址栏但有状态栏和滚动条允许用户调整大小第三个可配置参数如下用于关闭窗口只对顶层窗口有效种的窗口使用该方法无效用于移动浏览器窗口到指定位置它接受两个参数分别是窗口左上角距离屏幕左上角的水平距离和垂直距离单位为像素注意在普通网页中如果满足一下情况将无法通过调用该函数移动浏览器窗口当前窗口或标签页不是又方法创建的当前标签页所在的窗口包含多个标签页将窗口移动到一个相对位置它接受两个参数分别是窗口左上角向右移动的水平距离和向下移动的垂直距离单位为像素调用情况与上面类似用于缩放窗口到指定大小它接受两个参数第一个是缩放后的窗口宽度属性包含滚动条标题栏等等第二个是缩放后的窗口高度属性示例将窗口设置为整个屏幕的大小面积注意该属性需要满足一下条件才能生效不能设置那些不是通过创建的窗口或的大小当一个窗口里面含有一个以上的时无法设置窗口的大小用于缩放窗口它与的区别是它按照相对的量缩放别名用于将文档滚动到指定位置它接受两个参数表示滚动后位于窗口左上角的页面坐标也可以接受一个配置对象作为参数有三个属性滚动后页面左上角的垂直坐标即坐标滚动后页面左上角的水平坐标即坐标字符串表示滚动的方式有三个可能值默认值为用于将网页滚动指定距离单位像素它接受两个参数水平向右滚动的像素垂直向下滚动的像素向下滚动一页如果不是要滚动整个文档而是要滚动某个元素可以使用下面三个属性和方法跳出打印对话框与用户点击菜单里面的打印命令效果相同对于非桌面设备如手机可能没有打印功能这时可以这样判断执行打印会激活窗口使其获得焦点出现在其他窗口的前面将焦点从窗口移除返回一个对象表示用户现在选中的文本使用对象的方法可以得到选中的文本接受一个元素节点作为参数返回一个包含该元素的最终样式信息的对象用来检查的语句跟类似都是推迟某个函数的执行不同之处在于必须指定推迟的时间则是推迟到浏览器下一次重流时执行执行完才会进行下一次重绘重绘通常是执行一次不过浏览器会自动调节这个速率比如网页切换到后台页时会暂停执行如果某个函数会改变网页的布局一般就放在里面执行这样可以节省系统资源使得网页效果更加平滑因为慢速设备会用较慢的速率重流和重绘而速度更快的设备会有更快的速率该方法接受一个回调函数作为参数上面代码中是一个回调函数执行时它的参数就是系统传入的一个高精度时间戳的返回值单位是毫秒表示距离网页加载的时间的返回值是一个整数这个整数可以传入用来取消回调函数的执行下面是一个执行网页动画的例子元素不断向左移最大不超过像素如果距离第一次执行不超过毫秒就继续执行动画跟类似也是将某个函数推迟执行但是它保证将回调函数推迟到系统资源空闲时执行也就是说如果某个任务不是很关键就可以使用将其推迟执行以保证网页性能它跟的区别在于后者指定回调函数在下一次浏览器重排时执行问题在于下一次重排时系统资源未必空闲不一定能保证在毫秒之内完成可以保证回调函数在系统资源空闲时执行该方法接受一个回调函数和一个配置对象作为参数配置对象可以指定一个推迟执行的最长时间如果过了这个时间回调函数不管系统资源有无空虚都会执行参数是一个回调函数该回调函数执行时系统会传入一个对象作为参数对象有一个属性布尔值表示是否为超时调用和一个方法返回该空闲时段剩余的毫秒数参数是一个配置对象目前只有一个属性用来指定回调函数推迟执行的最大毫秒数该参数可选方法返回一个整数该整数可以传入取消回调函数写在最后本文只记录了一些属性和方法有关对象更进一步的了解如对象的事件下的主要对象等可以查看阮一峰大佬的文章',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-14 01:40:13',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/2B9A1EE0-8EBD-4AF1-89EE-CE3C5F1E9657_1_201_a.jpeg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://xiaojubusongxi26.github.io/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">小橘不颂兮🍊</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" alt="微信" src="/null"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/null" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="/null"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/CSS/" style="font-size: 1.05rem;">CSS<sup>9</sup></a><a href="/tags/Day-Coding/" style="font-size: 1.05rem;">Day Coding<sup>5</sup></a><a href="/tags/HTML/" style="font-size: 1.05rem;">HTML<sup>1</sup></a><a href="/tags/JavaScript/" style="font-size: 1.05rem;">JavaScript<sup>1</sup></a><a href="/tags/Koa/" style="font-size: 1.05rem;">Koa<sup>1</sup></a><a href="/tags/React/" style="font-size: 1.05rem;">React<sup>1</sup></a><a href="/tags/Vue/" style="font-size: 1.05rem;">Vue<sup>3</sup></a><a href="/tags/hexo/" style="font-size: 1.05rem;">hexo<sup>1</sup></a><a href="/tags/javascript/" style="font-size: 1.05rem;">javascript<sup>8</sup></a><a href="/tags/uniapp/" style="font-size: 1.05rem;">uniapp<sup>2</sup></a><a href="/tags/webpack/" style="font-size: 1.05rem;">webpack<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 1.05rem;">前端工程化<sup>1</sup></a><a href="/tags/%E6%A1%88%E4%BE%8B/" style="font-size: 1.05rem;">案例<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/04/"><span class="card-archive-list-date">四月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">8</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">14</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" itemprop="url">前端开发</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/javascript/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>javascript</span></a></span></div></div><h1 class="post-title" itemprop="name headline">window 对象</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-04-13T17:34:00.000Z" title="发表于 2024-04-14 01:34:00">2024-04-14</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-04-13T17:40:13.431Z" title="更新于 2024-04-14 01:40:13">2024-04-14</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为成都"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>成都</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/wallhaven-qz8z3d.jpg"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/posts/JavaScript/window%E5%AF%B9%E8%B1%A1/"><header><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" itemprop="url">前端开发</a><a href="/tags/javascript/" tabindex="-1" itemprop="url">javascript</a><h1 id="CrawlerTitle" itemprop="name headline">window 对象</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">王谢棠</span><time itemprop="dateCreated datePublished" datetime="2024-04-13T17:34:00.000Z" title="发表于 2024-04-14 01:34:00">2024-04-14</time><time itemprop="dateCreated datePublished" datetime="2024-04-13T17:40:13.431Z" title="更新于 2024-04-14 01:40:13">2024-04-14</time></header><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>window 对象指当前浏览器的窗口，也是当前页面的顶层对象。</p>
+<ul>
+<li>如果一个变量未声明，那么默认就是顶层对象的属性。</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/image-20240412233105393.png" alt="image-20240412233105393"></p>
+<h2 id="Window-对象的属性"><a href="#Window-对象的属性" class="headerlink" title="Window 对象的属性"></a>Window 对象的属性</h2><h3 id="name"><a href="#name" class="headerlink" title="name"></a>name</h3><p>特性：</p>
+<ul>
+<li>该属性是一个字符串，如果给它赋值其他类型值也会被转成字符串。不同浏览器这个属性能存储的值大小不一，可以高达几 MB</li>
+<li>只要浏览器标签页没有关闭，无论是重定向至其他网站还是刷新网页，该属性都存在</li>
+</ul>
+<p>用处：</p>
+<ul>
+<li>可以记录来源网站信息</li>
+<li>跨页跳转携带信息</li>
+</ul>
+<p>but，引用张鑫旭大佬对该属性的评价：</p>
+<blockquote>
+<p><code>window.name</code>没什么卵用，知道他没用就是很有用的知识。</p>
+</blockquote>
+<h3 id="closed"><a href="#closed" class="headerlink" title="closed"></a>closed</h3><p>返回一个布尔值，表示窗口是否关闭。</p>
+<blockquote>
+<p>感觉有点鸡肋。。可以用于编写脚本</p>
+</blockquote>
+<h3 id="opener"><a href="#opener" class="headerlink" title="opener"></a>opener</h3><p>表示打开当前窗口的父窗口。如果当前窗口没有父窗口（即直接在地址栏输入打开），则返回<code>null</code>。</p>
+<p>用处：</p>
+<ul>
+<li>通过<code>opener</code>属性，可以获得父窗口的全局属性和方法，但只限于两个窗口同源的情况，且其中一个窗口由另一个打开。<code>&lt;a&gt;</code>元素添加<code>rel=&quot;noopener&quot;</code>属性，可以防止新打开的窗口获取父窗口，减轻被恶意网站修改父窗口 URL 的风险。</li>
+</ul>
+<h3 id="self、window"><a href="#self、window" class="headerlink" title="self、window"></a>self、window</h3><p>已读属性，都指向窗口本身</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">self</span> === <span class="variable language_">window</span>;</span><br><span class="line"><span class="variable language_">window</span>.<span class="property">window</span> === <span class="variable language_">window</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="frames"><a href="#frames" class="headerlink" title="frames"></a>frames</h3><p>返回一个类似数组的对象，成员为页面内所有框架窗口，包括<code>frame</code>元素和<code>iframe</code>元素。<code>window.frames[0]</code>表示页面中第一个框架窗口。</p>
+<h3 id="length"><a href="#length" class="headerlink" title="length"></a>length</h3><p>返回当前网页包含的框架总数。如果当前网页不包含<code>frame</code>和<code>iframe</code>元素，那么<code>window.length</code>就返回<code>0</code>。</p>
+<h3 id="frameElement"><a href="#frameElement" class="headerlink" title="frameElement"></a>frameElement</h3><p>用于当前窗口嵌在另一个网页的情况（嵌入<code>&lt;object&gt;</code>、<code>&lt;iframe&gt;</code>或<code>&lt;embed&gt;</code>元素），返回当前窗口所在的那个元素节点。如果当前窗口是顶层窗口，或者所嵌入的那个网页不是同源的，该属性返回<code>null</code>。</p>
+<h3 id="top、parent"><a href="#top、parent" class="headerlink" title="top、parent"></a>top、parent</h3><p>top：返回窗口层级最顶层窗口的引用。</p>
+<p>parent：指向父窗口。如果当前窗口没有父窗口，<code>window.parent</code>指向自身。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/parent"><code>window.parent</code></a> 返回当前窗口的直接父对象，而 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/top"><code>window.top</code></a> 返回最顶层的窗口对象。</p>
+<p>当你在处理父窗口的子框架（subframe），而你想获取顶层框架时，这个属性相当有用。</p>
+<h3 id="devicePixelRatio"><a href="#devicePixelRatio" class="headerlink" title="devicePixelRatio"></a>devicePixelRatio</h3><p>返回一个数值，表示一个 CSS 像素的大小与一个物理像素的大小之间的比率。也就是说，它表示一个 CSS 像素由多少个物理像素组成。它可以用于判断用户的显示环境，如果这个比率较大，就表示用户正在使用高清屏幕，因此可以显示较大像素的图片。</p>
+<blockquote>
+<p>Mac Air 15 寸值为 2</p>
+</blockquote>
+<h3 id="位置大小属性"><a href="#位置大小属性" class="headerlink" title="位置大小属性"></a>位置大小属性</h3><ul>
+<li>screenX、screenY</li>
+<li>innerHeight、innerWidth</li>
+<li>outerHeight、outerWidth</li>
+<li>scrollX、scrollY</li>
+<li>pageXOffset、pageYOffset</li>
+</ul>
+<p>单独有文章写过，不在赘述</p>
+<h3 id="全局对象属性"><a href="#全局对象属性" class="headerlink" title="全局对象属性"></a>全局对象属性</h3><ul>
+<li><code>window.document</code>：指向<code>document</code>对象。注意，这个属性有同源限制。只有来自同源的脚本才能读取这个属性。</li>
+<li><code>window.location</code>：指向<code>Location</code>对象，用于获取当前窗口的 URL 信息。它等同于<code>document.location</code>属性</li>
+<li><code>window.navigator</code>：指向<code>Navigator</code>对象，用于获取环境信息</li>
+<li><code>window.history</code>：指向<code>History</code>对象，表示浏览器的浏览历史</li>
+<li><code>window.localStorage</code>：指向本地储存的 localStorage 数据</li>
+<li><code>window.sessionStorage</code>：指向本地储存的 sessionStorage 数据</li>
+<li><code>window.console</code>：指向<code>console</code>对象，用于操作控制台</li>
+<li><code>window.screen</code>：指向<code>Screen</code>对象，表示屏幕信息</li>
+</ul>
+<p><em>都可以省略前面的 window</em></p>
+<h2 id="window-对象方法"><a href="#window-对象方法" class="headerlink" title="window 对象方法"></a>window 对象方法</h2><h3 id="alert"><a href="#alert" class="headerlink" title="alert()"></a>alert()</h3><p>弹出对话框，无法使用 css 样式，可以使用<code>\n</code>换行</p>
+<h3 id="prompt"><a href="#prompt" class="headerlink" title="prompt()"></a>prompt()</h3><p>弹出的对话框，提示文字的下方，还有一个输入框，要求用户输入信息，并有“确定”和“取消”两个按钮。它往往用来获取用户输入的数据。</p>
+<ul>
+<li>如果点击确定函数的返回值就是输入值。</li>
+<li>如果点击取消或者<code>ESC</code>返回<code>null</code></li>
+</ul>
+<h3 id="confirm"><a href="#confirm" class="headerlink" title="confirm()"></a>confirm()</h3><p>返回一个布尔值，如果用户点击“确定”，返回<code>true</code>；如果用户点击“取消”，则返回<code>false</code>。</p>
+<h3 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h3><p>用于新建另一个浏览器窗口，类似于浏览器菜单的新建窗口选项。它会返回新窗口的引用，如果无法新建窗口，则返回<code>null</code>。</p>
+<p>参数：</p>
+<ol>
+<li><code>url</code>：字符串，表示新窗口的网址。如果省略，默认网址就是<code>about:blank</code>。</li>
+<li><code>windowName</code>：字符串，表示新窗口的名字。如果该名字的窗口已经存在，则占用该窗口，不再新建窗口。如果省略，就默认使用<code>_blank</code>，表示新建一个没有名字的窗口。另外还有几个预设值，<code>_self</code>表示当前窗口，<code>_top</code>表示顶层窗口，<code>_parent</code>表示上一层窗口。</li>
+<li><code>windowFeatures</code>：字符串，内容为逗号分隔的键值对（详见下文），表示新窗口的参数，比如有没有提示栏、工具条等等。如果省略，则默认打开一个完整 UI 的新窗口。如果新建的是一个已经存在的窗口，则该参数不起作用，浏览器沿用以前窗口的参数。</li>
+</ol>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> popup = <span class="variable language_">window</span>.<span class="title function_">open</span>(</span><br><span class="line">  <span class="string">&quot;https://xiaojubusongxi26.github.io/posts/CSS/SVG%E6%8F%8F%E8%BE%B9%E5%8A%A8%E7%94%BB/&quot;</span>,</span><br><span class="line">  <span class="string">&quot;DefinitionsWindows&quot;</span>,</span><br><span class="line">  <span class="string">&quot;height=200,width=200,location=no,status=yes,resizable=yes,scrollbars=yes&quot;</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<p>上面代码表示，打开的新窗口高度和宽度都为 200 像素，没有地址栏，但有状态栏和滚动条，允许用户调整大小。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/image-20240413234912326.png" alt="image-20240413234912326" style="zoom: 33%;" />
+
+<p>第三个可配置参数如下：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/image-20240413235004614.png" alt="image-20240413235004614"></p>
+<h3 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h3><p>用于关闭窗口，只对顶层窗口有效，<code>iframe</code>种的窗口使用该方法无效</p>
+<h3 id="moveTo"><a href="#moveTo" class="headerlink" title="moveTo()"></a>moveTo()</h3><p>用于移动浏览器窗口到指定位置。它接受两个参数，分别是窗口左上角距离屏幕左上角的水平距离和垂直距离，单位为像素。</p>
+<p>⚠️ 注意，在普通网页中，如果满足一下情况，将无法通过调用该函数移动浏览器窗口：</p>
+<ol>
+<li>当前窗口或标签页不是又<code>window.open()</code>方法创建的</li>
+<li>当前标签页所在的窗口包含多个标签页。</li>
+</ol>
+<h3 id="moveBy"><a href="#moveBy" class="headerlink" title="moveBy()"></a>moveBy()</h3><p>将窗口移动到一个相对位置。它接受两个参数，分别是窗口左上角向右移动的水平距离和向下移动的垂直距离，单位为像素。</p>
+<p>⚠️<strong>调用情况与上面类似</strong>。</p>
+<h3 id="resizeTo"><a href="#resizeTo" class="headerlink" title="resizeTo()"></a>resizeTo()</h3><p>用于缩放窗口到指定大小。它接受两个参数，第一个是缩放后的窗口宽度（<code>outerWidth</code>属性，包含滚动条、标题栏等等），第二个是缩放后的窗口高度（<code>outerHeight</code>属性）。</p>
+<p>示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将窗口设置为整个屏幕的 1/4 大小（面积）</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">quarter</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">resizeTo</span>(<span class="variable language_">window</span>.<span class="property">screen</span>.<span class="property">availWidth</span> / <span class="number">2</span>, <span class="variable language_">window</span>.<span class="property">screen</span>.<span class="property">availHeight</span> / <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>⚠️ 注意，该属性需要满足一下条件才能生效：</p>
+<ol>
+<li>不能设置那些不是通过 window.open 创建的窗口或 Tab 的大小。</li>
+<li>当一个窗口里面含有一个以上的 Tab 时，无法设置窗口的大小。</li>
+</ol>
+<h3 id="resizeBy"><a href="#resizeBy" class="headerlink" title="resizeBy()"></a>resizeBy()</h3><p>用于缩放窗口。它与<code>window.resizeTo()</code>的区别是，它按照相对的量缩放。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">resizeBy</span>(-<span class="number">200</span>, -<span class="number">200</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="scrollTo"><a href="#scrollTo" class="headerlink" title="scrollTo()"></a>scrollTo()</h3><p>别名<code>scroll()</code>，用于将文档滚动到指定位置。它接受两个参数，表示滚动后位于窗口左上角的页面坐标。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">scrollTo</span>(x - coord, y - coord);</span><br></pre></td></tr></table></figure>
+
+<p>也可以接受一个配置对象作为参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">scrollTO</span>(options);</span><br></pre></td></tr></table></figure>
+
+<p><code>options</code>有三个属性：</p>
+<ul>
+<li><code>top</code>：滚动后页面左上角的垂直坐标，即 y 坐标。</li>
+<li><code>left</code>：滚动后页面左上角的水平坐标，即 x 坐标。</li>
+<li><code>behavior</code>：字符串，表示滚动的方式，有三个可能值（<code>smooth</code>、<code>instant</code>、<code>auto</code>），默认值为<code>auto</code>。</li>
+</ul>
+<h3 id="scrollBy"><a href="#scrollBy" class="headerlink" title="scrollBy()"></a>scrollBy()</h3><p>用于将网页滚动指定距离（单位像素）。它接受两个参数：水平向右滚动的像素，垂直向下滚动的像素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 向下滚动一页</span></span><br><span class="line">windnow.<span class="title function_">scrollBy</span>(<span class="number">0</span>, <span class="variable language_">window</span>.<span class="property">innerHeight</span>);</span><br></pre></td></tr></table></figure>
+
+<p>如果不是要滚动整个文档，而是要滚动某个元素，可以使用下面三个属性和方法。</p>
+<ul>
+<li>Element.scrollTop</li>
+<li>Element.scrollLeft</li>
+<li>Element.scrollIntoView()</li>
+</ul>
+<h3 id="print"><a href="#print" class="headerlink" title="print()"></a>print()</h3><p>跳出打印对话框，与用户点击菜单里面的“打印”命令效果相同。</p>
+<p>⚠️ 对于非桌面设备（如手机）可能没有打印功能，这时可以这样判断：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="variable language_">window</span>.<span class="property">print</span> === <span class="string">&quot;function&quot;</span>) &#123;</span><br><span class="line">  <span class="comment">// 执行打印</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="focus"><a href="#focus" class="headerlink" title="focus()"></a>focus()</h3><p>会激活窗口，使其获得焦点，出现在其他窗口的前面。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> popup = <span class="variable language_">window</span>.<span class="title function_">open</span>(<span class="string">&quot;popup.html&quot;</span>, <span class="string">&quot;Popup Window&quot;</span>);</span><br><span class="line"><span class="keyword">if</span> (popup !== <span class="literal">null</span> &amp;&amp; !popup.<span class="property">closed</span>) &#123;</span><br><span class="line">  popup.<span class="title function_">focus</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="blur"><a href="#blur" class="headerlink" title="blur()"></a>blur()</h3><p>将焦点从窗口移除。</p>
+<h3 id="getSelection"><a href="#getSelection" class="headerlink" title="getSelection()"></a>getSelection()</h3><p>返回一个<code>Selection</code>对象，表示用户现在选中的文本。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selObj = <span class="variable language_">window</span>.<span class="title function_">getSelection</span>();</span><br></pre></td></tr></table></figure>
+
+<p>使用<code>Selection</code>对象的<code>toString</code>方法可以得到选中的文本。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> selectedText = selObj.<span class="title function_">toString</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="getComputedStyle"><a href="#getComputedStyle" class="headerlink" title="getComputedStyle()"></a>getComputedStyle()</h3><p>接受一个元素节点作为参数，返回一个包含该元素的最终样式信息的对象。</p>
+<h3 id="matchMedia"><a href="#matchMedia" class="headerlink" title="matchMedia()"></a>matchMedia()</h3><p>用来检查 CSS 的<code>mediaQuery</code>语句</p>
+<h3 id="requestAnimationFrame"><a href="#requestAnimationFrame" class="headerlink" title="requestAnimationFrame()"></a>requestAnimationFrame()</h3><p>跟<code>setTimeout</code>类似，都是推迟某个函数的执行。不同之处在于，<code>setTimeout</code>必须指定推迟的时间，<code>window.requestAnimationFrame()</code>则是推迟到浏览器下一次重流时执行，执行完才会进行下一次重绘。重绘通常是 16ms 执行一次，不过浏览器会自动调节这个速率，比如网页切换到后台 Tab 页时，<code>requestAnimationFrame()</code>会暂停执行。</p>
+<p>如果某个函数会改变网页的布局，一般就放在<code>window.requestAnimationFrame()</code>里面执行，这样可以节省系统资源，使得网页效果更加平滑。因为慢速设备会用较慢的速率重流和重绘，而速度更快的设备会有更快的速率。</p>
+<p>该方法接受一个回调函数作为参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">requestAnimationFrame</span>(callback);</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，<code>callback</code>是一个回调函数。<code>callback</code>执行时，它的参数就是系统传入的一个高精度时间戳（<code>performance.now()</code>的返回值），单位是毫秒，表示距离网页加载的时间。</p>
+<p><code>window.requestAnimationFrame()</code>的返回值是一个整数，这个整数可以传入<code>window.cancelAnimationFrame()</code>，用来取消回调函数的执行。</p>
+<p>下面是一个<code>window.requestAnimationFrame()</code>执行网页动画的例子。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> element = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;animate&quot;</span>);</span><br><span class="line">element.<span class="property">style</span>.<span class="property">position</span> = <span class="string">&quot;absolute&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> start = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">step</span>(<span class="params">timestamp</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (!start) start = timestamp;</span><br><span class="line">  <span class="keyword">var</span> progress = timestamp - start;</span><br><span class="line">  <span class="comment">// 元素不断向左移，最大不超过200像素</span></span><br><span class="line">  element.<span class="property">style</span>.<span class="property">left</span> = <span class="title class_">Math</span>.<span class="title function_">min</span>(progress / <span class="number">10</span>, <span class="number">200</span>) + <span class="string">&quot;px&quot;</span>;</span><br><span class="line">  <span class="comment">// 如果距离第一次执行不超过 2000 毫秒，</span></span><br><span class="line">  <span class="comment">// 就继续执行动画</span></span><br><span class="line">  <span class="keyword">if</span> (progress &lt; <span class="number">2000</span>) &#123;</span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">requestAnimationFrame</span>(step);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">requestAnimationFrame</span>(step);</span><br></pre></td></tr></table></figure>
+
+<h3 id="requestIdleCallback"><a href="#requestIdleCallback" class="headerlink" title="requestIdleCallback()"></a>requestIdleCallback()</h3><p>跟<code>setTimeout</code>类似，也是将某个函数推迟执行，但是它保证将回调函数推迟到系统资源空闲时执行。也就是说，如果某个任务不是很关键，就可以使用<code>window.requestIdleCallback()</code>将其推迟执行，以保证网页性能。</p>
+<p>它跟<code>window.requestAnimationFrame()</code>的区别在于，后者指定回调函数在下一次浏览器重排时执行，问题在于下一次重排时，系统资源未必空闲，不一定能保证在 16 毫秒之内完成；<code>window.requestIdleCallback()</code>可以保证回调函数在系统资源空闲时执行。</p>
+<p>该方法接受一个回调函数和一个配置对象作为参数。配置对象可以指定一个推迟执行的最长时间，如果过了这个时间，回调函数不管系统资源有无空虚，都会执行。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">requestIdleCallback</span>(callback[, options])</span><br></pre></td></tr></table></figure>
+
+<p><code>callback</code>参数是一个回调函数。该回调函数执行时，系统会传入一个<code>IdleDeadline</code>对象作为参数。<code>IdleDeadline</code>对象有一个<code>didTimeout</code>属性（布尔值，表示是否为超时调用）和一个<code>timeRemaining()</code>方法（返回该空闲时段剩余的毫秒数）。</p>
+<p><code>options</code>参数是一个配置对象，目前只有<code>timeout</code>一个属性，用来指定回调函数推迟执行的最大毫秒数。该参数可选。</p>
+<p><code>window.requestIdleCallback()</code>方法返回一个整数。该整数可以传入<code>window.cancelIdleCallback()</code>取消回调函数。</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>本文只记录了一些属性和方法，有关<code>window</code>对象更进一步的了解，如 window 对象的事件，window 下的主要对象（Screen、Navigator 等），可以查看<a target="_blank" rel="noopener" href="https://www.bookstack.cn/read/javascript-tutorial/spilt.1.docs-bom-window.md">阮一峰大佬的文章</a>。</p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/2B9A1EE0-8EBD-4AF1-89EE-CE3C5F1E9657_1_201_a.jpeg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/2B9A1EE0-8EBD-4AF1-89EE-CE3C5F1E9657_1_201_a.jpeg" title="头像" alt="头像"></a><div class="post-copyright__author_name">王谢棠</div><div class="post-copyright__author_desc">嘿，好久不见</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/posts/JavaScript/window%E5%AF%B9%E8%B1%A1/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/posts/JavaScript/window%E5%AF%B9%E8%B1%A1/')">window 对象</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/posts/JavaScript/window%E5%AF%B9%E8%B1%A1/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=window 对象&amp;url=http://example.com/posts/JavaScript/window%E5%AF%B9%E8%B1%A1/&amp;pic=https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/wallhaven-qz8z3d.jpg" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">小橘不颂兮🍊</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/javascript/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>javascript<span class="tagsPageCount">8</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/wallhaven-qz8z3d.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/posts/JavaScript/JS%E9%87%8C%E7%9A%84%E5%AE%BD%E9%AB%98%E8%B7%9D%E7%A6%BB/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/image-20240411235234614.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">JS 里的那些宽高距离</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/posts/JavaScript/ES6+/" title="ES6+"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/wallhaven-qzmlj5.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-12-17</div><div class="title">ES6+</div></div></a></div><div><a href="/posts/JavaScript/JS%E5%AF%B9%E8%B1%A1%E9%81%8D%E5%8E%86/" title="JS对象遍历"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/wallhaven-x68xvz.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-12-17</div><div class="title">JS对象遍历</div></div></a></div><div><a href="/posts/JavaScript/JS%E9%87%8C%E7%9A%84%E5%AE%BD%E9%AB%98%E8%B7%9D%E7%A6%BB/" title="JS 里的那些宽高距离"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/image-20240411235234614.png" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-04-12</div><div class="title">JS 里的那些宽高距离</div></div></a></div><div><a href="/posts/JavaScript/Symbol%E5%BA%94%E7%94%A8/" title="Symbol应用"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/d6/wallhaven-d6w763.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-12-17</div><div class="title">Symbol应用</div></div></a></div><div><a href="/posts/JavaScript/%E4%BD%BF%E7%94%A8EyeDropper%E6%96%B9%E6%B3%95%E5%8F%96%E8%89%B2/" title="使用EyeDropper取色"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/wallhaven-jxrvqq.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2024-01-17</div><div class="title">使用EyeDropper取色</div></div></a></div><div><a href="/posts/JavaScript/%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/" title="常用正则"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://w.wallhaven.cc/full/jx/wallhaven-jxl3qp.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2023-12-17</div><div class="title">常用正则</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/2B9A1EE0-8EBD-4AF1-89EE-CE3C5F1E9657_1_201_a.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/%E8%B0%83%E7%9A%AE.svg" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这里是<b style="color:#fff">小橘不颂兮</b>的个人微博，这里有关于<b style="color:#fff">前端</b>的一些学习记录</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">王谢棠</h1><div class="author-info__desc">嘿，好久不见</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/xiaojubusongxi26" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Window-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text">Window 对象的属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#name"><span class="toc-number">2.1.</span> <span class="toc-text">name</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#closed"><span class="toc-number">2.2.</span> <span class="toc-text">closed</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#opener"><span class="toc-number">2.3.</span> <span class="toc-text">opener</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#self%E3%80%81window"><span class="toc-number">2.4.</span> <span class="toc-text">self、window</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#frames"><span class="toc-number">2.5.</span> <span class="toc-text">frames</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#length"><span class="toc-number">2.6.</span> <span class="toc-text">length</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#frameElement"><span class="toc-number">2.7.</span> <span class="toc-text">frameElement</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#top%E3%80%81parent"><span class="toc-number">2.8.</span> <span class="toc-text">top、parent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#devicePixelRatio"><span class="toc-number">2.9.</span> <span class="toc-text">devicePixelRatio</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AE%E5%A4%A7%E5%B0%8F%E5%B1%9E%E6%80%A7"><span class="toc-number">2.10.</span> <span class="toc-text">位置大小属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="toc-number">2.11.</span> <span class="toc-text">全局对象属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#window-%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">window 对象方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#alert"><span class="toc-number">3.1.</span> <span class="toc-text">alert()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#prompt"><span class="toc-number">3.2.</span> <span class="toc-text">prompt()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#confirm"><span class="toc-number">3.3.</span> <span class="toc-text">confirm()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#open"><span class="toc-number">3.4.</span> <span class="toc-text">open()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#close"><span class="toc-number">3.5.</span> <span class="toc-text">close()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#moveTo"><span class="toc-number">3.6.</span> <span class="toc-text">moveTo()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#moveBy"><span class="toc-number">3.7.</span> <span class="toc-text">moveBy()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#resizeTo"><span class="toc-number">3.8.</span> <span class="toc-text">resizeTo()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#resizeBy"><span class="toc-number">3.9.</span> <span class="toc-text">resizeBy()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scrollTo"><span class="toc-number">3.10.</span> <span class="toc-text">scrollTo()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scrollBy"><span class="toc-number">3.11.</span> <span class="toc-text">scrollBy()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#print"><span class="toc-number">3.12.</span> <span class="toc-text">print()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#focus"><span class="toc-number">3.13.</span> <span class="toc-text">focus()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#blur"><span class="toc-number">3.14.</span> <span class="toc-text">blur()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getSelection"><span class="toc-number">3.15.</span> <span class="toc-text">getSelection()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getComputedStyle"><span class="toc-number">3.16.</span> <span class="toc-text">getComputedStyle()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#matchMedia"><span class="toc-number">3.17.</span> <span class="toc-text">matchMedia()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#requestAnimationFrame"><span class="toc-number">3.18.</span> <span class="toc-text">requestAnimationFrame()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#requestIdleCallback"><span class="toc-number">3.19.</span> <span class="toc-text">requestIdleCallback()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><span class="toc-number">4.</span> <span class="toc-text">写在最后</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/JavaScript/window%E5%AF%B9%E8%B1%A1/" title="window 对象"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/wallhaven-qz8z3d.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="window 对象"/></a><div class="content"><a class="title" href="/posts/JavaScript/window%E5%AF%B9%E8%B1%A1/" title="window 对象">window 对象</a><time datetime="2024-04-13T17:34:00.000Z" title="发表于 2024-04-14 01:34:00">2024-04-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/JavaScript/JS%E9%87%8C%E7%9A%84%E5%AE%BD%E9%AB%98%E8%B7%9D%E7%A6%BB/" title="JS 里的那些宽高距离"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/image-20240411235234614.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JS 里的那些宽高距离"/></a><div class="content"><a class="title" href="/posts/JavaScript/JS%E9%87%8C%E7%9A%84%E5%AE%BD%E9%AB%98%E8%B7%9D%E7%A6%BB/" title="JS 里的那些宽高距离">JS 里的那些宽高距离</a><time datetime="2024-04-11T16:34:00.000Z" title="发表于 2024-04-12 00:34:00">2024-04-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/CSS/SVG%E6%8F%8F%E8%BE%B9%E5%8A%A8%E7%94%BB/" title="SVG描边效果"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/image-20240411225749749.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SVG描边效果"/></a><div class="content"><a class="title" href="/posts/CSS/SVG%E6%8F%8F%E8%BE%B9%E5%8A%A8%E7%94%BB/" title="SVG描边效果">SVG描边效果</a><time datetime="2024-04-11T15:03:00.000Z" title="发表于 2024-04-11 23:03:00">2024-04-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/CSS/CSS%E7%BB%98%E5%88%B6%E4%B8%89%E8%A7%92%E5%BD%A2/" title="CSS绘制三角形"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/wallhaven-851rey.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSS绘制三角形"/></a><div class="content"><a class="title" href="/posts/CSS/CSS%E7%BB%98%E5%88%B6%E4%B8%89%E8%A7%92%E5%BD%A2/" title="CSS绘制三角形">CSS绘制三角形</a><time datetime="2024-04-10T15:31:00.000Z" title="发表于 2024-04-10 23:31:00">2024-04-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/JavaScript/%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87%E4%B8%BB%E8%A6%81%E9%A2%9C%E8%89%B2/" title="获取图片主要颜色"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://xiaojubusongoss.oss-cn-beijing.aliyuncs.com/img/wallhaven-l8r6oy.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="获取图片主要颜色"/></a><div class="content"><a class="title" href="/posts/JavaScript/%E8%8E%B7%E5%8F%96%E5%9B%BE%E7%89%87%E4%B8%BB%E8%A6%81%E9%A2%9C%E8%89%B2/" title="获取图片主要颜色">获取图片主要颜色</a><time datetime="2024-02-06T09:57:00.000Z" title="发表于 2024-02-06 17:57:00">2024-02-06</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 王谢棠</div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">2</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://xiaojubusongxi26.github.io/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/CSS/" style="font-size: 0.88rem;">CSS<sup>9</sup></a><a href="/tags/Day-Coding/" style="font-size: 0.88rem;">Day Coding<sup>5</sup></a><a href="/tags/HTML/" style="font-size: 0.88rem;">HTML<sup>1</sup></a><a href="/tags/JavaScript/" style="font-size: 0.88rem;">JavaScript<sup>1</sup></a><a href="/tags/Koa/" style="font-size: 0.88rem;">Koa<sup>1</sup></a><a href="/tags/React/" style="font-size: 0.88rem;">React<sup>1</sup></a><a href="/tags/Vue/" style="font-size: 0.88rem;">Vue<sup>3</sup></a><a href="/tags/hexo/" style="font-size: 0.88rem;">hexo<sup>1</sup></a><a href="/tags/javascript/" style="font-size: 0.88rem;">javascript<sup>8</sup></a><a href="/tags/uniapp/" style="font-size: 0.88rem;">uniapp<sup>2</sup></a><a href="/tags/webpack/" style="font-size: 0.88rem;">webpack<sup>1</sup></a><a href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" style="font-size: 0.88rem;">前端工程化<sup>1</sup></a><a href="/tags/%E6%A1%88%E4%BE%8B/" style="font-size: 0.88rem;">案例<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("12/16/2023 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2023 By 安知鱼 V1.6.12",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 王谢棠 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
